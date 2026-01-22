@@ -32,11 +32,29 @@ export const postType = defineType({
       of: [{type: 'block'}],
     }),
     defineField({
+      name: 'image_2',
+      type: 'image',
+    }),
+    defineField({
+      name: 'body_2',
+      type: 'array',
+      of: [{type: 'block'}],
+    }),
+    defineField({
+      name: 'image_3',
+      type: 'image',
+    }),
+    defineField({
+      name: 'body_3',
+      type: 'array',
+      of: [{type: 'block'}],
+    }),
+    defineField({
       name: 'seoTitle',
       title: 'SEO Title Tag',
       type: 'string',
       description: 'Dieser Titel erscheint im Browser-Tab und bei Google. (Ideal: 50-60 Zeichen)',
-      validation: Rule => Rule.max(70).warning('Der Titel ist etwas zu lang für Google.')
-    })
+      validation: (Rule) => Rule.max(70).warning('Der Titel ist etwas zu lang für Google.'),
+    }),
   ],
 })
