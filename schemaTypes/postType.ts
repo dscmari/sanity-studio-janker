@@ -50,6 +50,24 @@ export const postType = defineType({
       of: [{type: 'block'}],
     }),
     defineField({
+      name: 'image_4',
+      type: 'image',
+    }),
+    defineField({
+      name: 'body_4',
+      type: 'array',
+      of: [{type: 'block'}],
+    }),
+    defineField({
+      name: 'image_5',
+      type: 'image',
+    }),
+    defineField({
+      name: 'body_5',
+      type: 'array',
+      of: [{type: 'block'}],
+    }),
+    defineField({
       name: 'seoTitle',
       title: 'SEO Title Tag',
       type: 'string',
