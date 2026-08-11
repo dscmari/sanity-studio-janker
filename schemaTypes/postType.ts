@@ -13,7 +13,16 @@ export const postType = defineType({
     defineField({
       name: 'slug',
       type: 'slug',
-      options: {source: 'title'},
+      options: {
+        source: 'title',
+        slugify: (input) =>
+          input
+            .toLowerCase()
+            .trim()
+            .replace(/\s+/g, '-') // Leerzeichen zu Bindestrichen
+            .replace(/[^a-z0-9\-\/]/g, '') // Erlaubt Buchstaben, Zahlen, '-' und '/'
+            .replace(/\/+/g, '/'), // Doppelte Slashes (//) verhindern
+      },
       validation: (rule) => rule.required(),
     }),
     defineField({
